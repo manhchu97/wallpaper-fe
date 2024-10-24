@@ -10,7 +10,7 @@ type HeaderProps = {
 const Header: React.FC<HeaderProps> = ({ title, onMenuClick, onSearchClick }) => {
   return (
     <header className="flex justify-between items-center p-4 bg-gray-800">
-      <button className="lg:hidden" onClick={onMenuClick}>
+      <button onClick={onMenuClick}>
         <Menu />
       </button>
       <h1 className="text-xl font-bold">{title}</h1>

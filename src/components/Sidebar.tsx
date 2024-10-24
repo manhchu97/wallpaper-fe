@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { Home, Crown, Info, Shield, FileText } from 'lucide-react'
 
 type SidebarProps = {
   isOpen: boolean
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
+const Sidebar = forwardRef<HTMLDivElement, SidebarProps>(({ isOpen }, ref) => {
   const animeList = [
     'AI', 'Akami Ga Kill', 'Akatsuki No Yona', 'Aldnoah Zero', 'Angel Beats', 
     'Angel Of Death', 'Anime Kawaii', 'Another', 'Ao No Exorcist', 'Asobi Asobase'
@@ -13,19 +13,16 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
 
   return (
     <div 
+      ref={ref}
       className={`fixed inset-y-0 left-0 z-50 w-64 bg-gray-800 transform ${
         isOpen ? 'translate-x-0' : '-translate-x-full'
-      } transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0`}
+      } transition-transform duration-300 ease-in-out`}
     >
       <div className="flex flex-col h-full">
         <div className="p-4 space-y-4">
           <div className="flex items-center space-x-4 text-yellow-500">
             <Home />
             <span className="font-bold">Home</span>
-          </div>
-          <div className="flex items-center space-x-4 text-gray-400">
-            <Crown />
-            <span>Remove Ads and more</span>
           </div>
           <div className="flex items-center space-x-4 text-gray-400">
             <Info />
@@ -51,6 +48,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
       </div>
     </div>
   )
-}
+})
+
+Sidebar.displayName = 'Sidebar'
 
 export default Sidebar

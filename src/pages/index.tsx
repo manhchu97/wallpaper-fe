@@ -4,12 +4,12 @@ import Image from 'next/image'
 
 const Home: NextPage = () => {
   const categories = [
-    { name: 'Baryon Mode', image: '/placeholder.svg?height=300&width=300' },
-    { name: 'Soul Eater', image: '/placeholder.svg?height=300&width=300' },
-    { name: "Miss Kobayashi's Dragon Maid", image: '/placeholder.svg?height=300&width=300' },
-    { name: 'Touken Ranbu', image: '/placeholder.svg?height=300&width=300' },
-    { name: 'Unknown Anime 1', image: '/placeholder.svg?height=300&width=300' },
-    { name: 'Unknown Anime 2', image: '/placeholder.svg?height=300&width=300' },
+    { name: 'Baryon Mode', image: 'https://testXPull.b-cdn.net/o_Ae_Y7jw_G_84c05cbec7.webp' },
+    { name: 'Soul Eater', image: 'https://testXPull.b-cdn.net/o_Ae_Y7jw_G_84c05cbec7.webp' },
+    { name: "Miss Kobayashi's Dragon Maid", image: 'https://testXPull.b-cdn.net/o_Ae_Y7jw_G_84c05cbec7.webp' },
+    { name: 'Touken Ranbu', image: 'https://testXPull.b-cdn.net/o_Ae_Y7jw_G_84c05cbec7.webp' },
+    { name: 'Unknown Anime 1', image: 'https://testXPull.b-cdn.net/thumbnail_o_Ae_Y7jw_G_84c05cbec7.webp' },
+    { name: 'Unknown Anime 2', image: 'https://testXPull.b-cdn.net/thumbnail_o_Ae_Y7jw_G_84c05cbec7.webp' },
   ]
 
   return (
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
         {categories.map((category, index) => (
           <div key={index} className="relative aspect-square rounded-lg overflow-hidden">
             <Image
